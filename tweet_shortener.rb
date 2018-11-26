@@ -56,13 +56,20 @@ end
 def selective_tweet_shortener(tweet)
   # binding.pry
   if tweet.length > 140
-    puts word_substituter(tweet)
+    word_substituter(tweet)
   else 
-    puts tweet
+    tweet
   end
 end
 
-
+def shortened_tweet_truncator(tweet)
+  word_substituter(tweet)
+  if tweet.length > 140
+    tweet[0..136].concat("...")
+  else 
+    tweet
+  end
+end
 
 
 
